@@ -250,6 +250,8 @@ This command will start the React development server.
 
 - Open a web browser and navigate to `http://localhost:3000`. You should see a list of books retrieved from the backend API.
 
+> **Note:** I've heard create-react-app isn't the best way to set up a React app for production, but it's a good way to get started quickly. If you're interested in learning more about how to set up a React app for production, check out this article: [How to Set Up a React App for Production](https://www.freecodecamp.org/news/how-to-set-up-a-react-app-for-production/). You can also check out the [React documentation](https://reactjs.org/docs/create-a-new-react-app.html) for more information. There is also [create-t3-app](https://create.t3.gg), which is a tool for creating a React app with TypeScript.
+
 ## Conclusion
 
 In this guide, you learned how to set up a development environment for The Book Loop using Docker, React, and PostgreSQL. By following these steps, you should have a fully functional backend API and a frontend React app that can communicate with the API. You can now continue to build out the functionality of your application by adding new routes, database tables, and frontend components. Good luck with your project!
