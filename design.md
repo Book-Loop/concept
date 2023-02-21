@@ -1,55 +1,61 @@
-# The Book Loop - Design Document
+# The Book Loop Design Document
 
-The Book Loop is a subscription-based service that allows authors to offer continuous updates to their readers in exchange for a recurring subscription fee. The platform will be built using the Go programming language, and will provide multiple versions, mentorship, videos, courses, and other resources around the topic of the books. The project will be licensed under the BSD-3 license.
+The Book Loop is a subscription-based service that provides an opportunity for writers to earn continuously from their books by providing multiple versions, mentorship, videos, courses, etc. around that topic. The organization is open to all kinds of ideas that will make it more inclusive and helpful for writers.
 
-## Features
+## Overview
 
-These are the features that will be implemented in the first version of the platform:
+The Book Loop is a subscription-based service that provides an opportunity for writers to earn continuously from their books by providing multiple versions, mentorship, videos, courses, etc. around that topic. The organization is open to all kinds of ideas that will make it more inclusive and helpful for writers.
 
-### User registration
+## Architecture
 
-Users will be able to create an account on the platform to access the latest versions of books, as well as additional resources offered by the authors.
+The Book Loop will be built as a web application using the following technologies:
 
-### Subscription model
+- React - A JavaScript library for building user interfaces
+- PostgreSQL - A powerful, open source object-relational database system
+- Docker - A containerization platform that enables the creation and deployment of applications in a portable and scalable way
 
-The platform will offer a subscription model for readers to access the latest versions of books, mentorship, videos, courses, and other resources offered by the authors. The subscription fee will be recurring, and the authors will receive a percentage of the revenue.
+The system will consist of the following components:
 
-### Multiple versions
+1. Frontend - A React app that will provide the user interface for the application
+2. Backend API - A Golang application that will provide the logic and interface with the database
+3. Database - A PostgreSQL database to store data related to the service
 
-Authors will be able to offer multiple versions of their books, such as an updated edition, an audiobook, an e-book, or a course. This will allow readers to choose the version that best suits their needs.
+## Frontend
 
-### Mentorship
+The frontend of The Book Loop will be a single-page application built with React. It will include the following features:
 
-Authors will be able to offer mentorship to their readers, providing guidance and advice on their writing, marketing, and publishing journey.
+- User registration and login
+- Subscription management
+- Book updates and versions
+- Mentorship and courses
+- Video library
 
-### Videos and courses
+The frontend will communicate with the backend API using RESTful endpoints. The use of Axios will be employed to perform HTTP requests from the frontend.
 
-Authors will be able to offer videos and courses related to their books' topics, providing additional value to their subscribers.
+## Backend
 
-### Incentives for authors
+The backend of The Book Loop will be a Golang application that will provide the API for the frontend to consume. It will include the following features:
 
-The platform will offer incentives to authors to continuously update their books, such as a percentage of the subscription revenue or bonuses for meeting certain milestones.
+- User authentication and authorization
+- Subscription management
+- Book management and updates
+- Mentorship and course management
+- Video library management
 
-## Technology
+The backend will communicate with the PostgreSQL database to store and retrieve data related to the service. The use of Gorilla Mux and sqlx will be employed to build the API.
 
-The platform will be built using the following technologies:
+## Database
 
-### Programming language
+The PostgreSQL database will store data related to the service, including:
 
-The platform will be built using the Go programming language, which is known for its concurrency features and performance.
+- User information
+- Book information
+- Subscription information
+- Mentorship and course information
+- Video library information
 
-### Web application framework
-
-The platform will utilize a web application framework like Echo to handle the server-side logic and database interaction.
-
-### Front-end framework
-
-The platform will use React for the front-end, which is a modern JavaScript framework that provides a fast and reliable user experience.
-
-### Database
-
-The platform will use PostgreSQL as the database, which is a powerful and reliable open-source database.
+The use of Docker will be employed to create a containerized instance of the PostgreSQL database for local development and deployment purposes.
 
 ## Conclusion
 
-The Book Loop is a unique subscription-based service that provides an opportunity for writers to earn continuously from their books while providing readers with the latest updates and additional resources. By using Go programming language, the platform will be built with performance and scalability in mind, ensuring a fast and reliable service for all users. The BSD-3 license will provide users with the freedom to use, modify, and distribute the code while limiting the liability of the authors.
+The Book Loop will be built using React and PostgreSQL with Docker, creating a powerful and scalable web application that will enable writers to earn continuously from their books. With the frontend, backend, and database all working together, The Book Loop will provide an easy-to-use platform for writers to provide updates and new versions to their readers.
