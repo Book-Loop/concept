@@ -1,5 +1,7 @@
 # The Book Loop - A Subscription Model for Writers to Continuously Update their Books
 
+![Book Loop](https://user-images.githubusercontent.com/19922556/220348385-16b06e15-25a6-474e-98db-ce31142066cf.jpg)
+
 The Book Loop is a subscription-based service that provides an opportunity for writers to earn continuously from their books by providing multiple versions, mentorship, videos, courses, and other resources around their topic.
 
 ## Overview
