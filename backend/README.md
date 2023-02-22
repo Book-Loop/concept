@@ -1,81 +1,64 @@
-### Book Loop Go server with an Nginx proxy and a Postgres database
+# Book Loop Go Server with an Nginx Proxy and a Postgres Database
 
-Project structure:
-```
-.
+This project contains the source code and configuration files for deploying a Book Loop Go server with an Nginx proxy and a Postgres database using Docker Compose.
+
+The project structure is as follows:
+
+```bash
 ├── backend
-│   ├── Dockerfile
-│   ├── go.mod
-│   ├── go.sum
-│   └── main.go
+│   ├── Dockerfile
+│   ├── go.mod
+│   ├── go.sum
+│   └── main.go
 ├── db
-│   └── password.txt
+│   └── password.txt
 ├── compose.yaml
 ├── proxy
-│   └── nginx.conf
+│   └── nginx.conf
 └── README.md
 ```
 
-[_compose.yaml_](compose.yaml)
-```shell
-services:
-  backend:
-    build:
-      context: backend
-      target: builder
-    ...
-  db:
-    image: postgres
-    ...
-  proxy:
-    image: nginx
-    volumes:
-      - type: bind
-        source: ./proxy/nginx.conf
-        target: /etc/nginx/conf.d/default.conf
-        read_only: true
-    ports:
-      - 80:80
-    ...
-```
-The compose file defines an application with three services `proxy`, `backend` and `db`.
-When deploying the application, docker compose maps port 80 of the proxy service container to port 80 of the host as specified in the file.
-Make sure port 80 on the host is not already being in use.
+## Prerequisites
 
-## Deploy with docker compose
+Before deploying the application, make sure you have the following software installed on your system:
 
-```shell
-$ docker compose up -d
-Creating network "nginx-golang-postgres_default" with the default driver
-Pulling db (postgres:)...
-latest: Pulling from library/postgres
-...
-Successfully built 5f7c899f9b49
-Successfully tagged nginx-golang-postgres_proxy:latest
-WARNING: Image for service proxy was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
-Creating nginx-golang-postgres_db_1 ... done
-Creating nginx-golang-postgres_backend_1 ... done
-Creating nginx-golang-postgres_proxy_1   ... done
-```
+* Docker Engine
+* Docker Compose
 
-## Expected result
+## Deployment
 
-Listing containers must show three containers running and the port mapping as below:
-```shell
-$ docker compose ps
-NAME                              COMMAND                  SERVICE             STATUS              PORTS
-nginx-golang-postgres-backend-1   "/code/bin/backend"      backend             running
-nginx-golang-postgres-db-1        "docker-entrypoint.s…"   db                  running (healthy)   5432/tcp
-nginx-golang-postgres-proxy-1     "/docker-entrypoint.…"   proxy               running             0.0.0.0:80->80/tcp
-```
+To deploy the application, follow these steps:
 
-After the application starts, navigate to `http://localhost:80` in your web browser or run:
-```shell
-$ curl localhost:80
-["Book post #0","Book post #1","Book post #2","Book post #3","Book post #4"]
-```
+1. Clone this repository to your local machine.
 
-Stop and remove the containers
-```shell
-$ docker compose down
-```
+2. Open a terminal and navigate to the project directory.
+
+3. Run the following command to start the application:
+
+    `docker-compose up -d`
+
+4. Docker Compose will build the required Docker images and start the containers. Wait for the process to complete.
+
+5. Once the application starts, navigate to `http://localhost:85` in your web browser or run the following command to test the server:
+
+    `curl localhost:85`
+
+    You should see a response with a list of book posts.
+
+6. When you're done testing the application, stop and remove the containers by running the following command:
+
+    `docker-compose down`
+
+## Services
+
+The application consists of the following services:
+
+* `backend`: A Go server that serves a list of book posts.
+* `db`: A Postgres database for storing the book posts.
+* `proxy`: An Nginx reverse proxy that routes requests to the backend server.
+
+The Docker Compose file (`compose.yaml`) defines the services and their configurations. The backend service is built using the Dockerfile in the `backend` directory. The proxy service uses the `nginx.conf` file in the `proxy` directory to configure Nginx.
+
+## Configuration
+
+The `compose.yaml` file contains the configuration for the services. You can modify the file to change the port mappings or the database credentials. The database password is stored in the `password.txt` file in the `db` directory.
