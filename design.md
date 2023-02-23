@@ -10,13 +10,14 @@ The Book Loop is a subscription-based service that provides an opportunity for w
 
 The Book Loop will be built as a web application using the following technologies:
 
-- React - A JavaScript library for building user interfaces
+- NextJS - A React framework that provides server-side rendering and other useful features
 - PostgreSQL - A powerful, open source object-relational database system
+- Go - A powerful, open source programming language
 - Docker - A containerization platform that enables the creation and deployment of applications in a portable and scalable way
 
 The system will consist of the following components:
 
-1. Frontend - A React app that will provide the user interface for the application
+1. Frontend - A NextJS app that will provide the user interface for the application
 2. Backend API - A Golang application that will provide the logic and interface with the database
 3. Database - A PostgreSQL database to store data related to the service
 
