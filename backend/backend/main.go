@@ -15,6 +15,12 @@ import (
 	_ "github.com/lib/pq"
 )
 
+type Book struct {
+	ID     int    `json:"id"`
+	Title  string `json:"title"`
+	Author string `json:"author"`
+}
+
 func connect() (*sql.DB, error) {
 	bin, err := ioutil.ReadFile("/run/secrets/db-password")
 	if err != nil {
@@ -31,18 +37,18 @@ func bookHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	rows, err := db.Query("SELECT title FROM book")
+	rows, err := db.Query("SELECT id, title, author FROM book")
 	if err != nil {
 		w.WriteHeader(500)
 		return
 	}
-	var titles []string
+	var books []Book
 	for rows.Next() {
-		var title string
-		err = rows.Scan(&title)
-		titles = append(titles, title)
+		var book Book
+		err = rows.Scan(&book.ID, &book.Title, &book.Author)
+		books = append(books, book)
 	}
-	json.NewEncoder(w).Encode(titles)
+	json.NewEncoder(w).Encode(books)
 }
 
 func main() {
@@ -75,12 +81,21 @@ func prepare() error {
 		return err
 	}
 
-	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS book (id SERIAL, title VARCHAR)"); err != nil {
+	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS book (id SERIAL, title VARCHAR, author VARCHAR)"); err != nil {
+		return err
+	}
+
+	defaultBook := Book{
+		Title:  "Linux for Pirates!",
+		Author: "Dean Lofts",
+	}
+
+	if _, err := db.Exec("INSERT INTO book (title, author) VALUES ($1, $2);", defaultBook.Title, defaultBook.Author); err != nil {
 		return err
 	}
 
 	for i := 0; i < 5; i++ {
-		if _, err := db.Exec("INSERT INTO book (title) VALUES ($1);", fmt.Sprintf("Book #%d", i)); err != nil {
+		if _, err := db.Exec("INSERT INTO book (title, author) VALUES ($1, $2);", fmt.Sprintf("Book #%d", i), fmt.Sprintf("Author #%d", i)); err != nil {
 			return err
 		}
 	}
