@@ -53,6 +53,8 @@ The form should also include a checkbox to agree to the terms and conditions of 
 
 - Notifications: The platform should send email notifications to authors when a new subscriber signs up for their book or when there are changes to their subscription offers.
 
+### Subscription Plans
+
 - Subscription Plans: The platform should offer different subscription plans for readers to choose from, depending on their needs and budget. For example, there could be a monthly, quarterly, or yearly subscription plan, each with different pricing and benefits. The benefits could include access to all the books and additional resources offered by the authors, early access to new releases, and exclusive content.
 - Pricing Page: The platform should have a pricing page that lists all the available subscription plans and their respective pricing and benefits. The pricing page should also have a clear call-to-action (CTA) button that says "Subscribe Now."
 - Registration Form: Once the reader clicks on the "Subscribe Now" CTA button, they should be taken to a registration form. The registration form should include the following fields:
