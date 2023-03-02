@@ -11,8 +11,8 @@ This guide will walk you through setting up a development environment for The Bo
 - Create a new directory for the project and navigate into it:
 
 ```bash
-mkdir the-book-loop
-cd the-book-loop
+mkdir book-loop
+cd book-loop
 ```
 
 - Create a new directory for the backend code and navigate into it:
