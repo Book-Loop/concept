@@ -31,6 +31,10 @@ The Book Loop is a unique subscription-based service that provides an opportunit
 
 ## Landing Page
 
+Here is a diagram of what the Landing Page should roughly look like.
+
+![book-loop-2](https://user-images.githubusercontent.com/19922556/222321046-9588ec35-9a0f-40be-9ea8-a8cc6b59b34d.png)
+
 ### Author Registration
 
 - Landing Page: The landing page should have a clear call-to-action (CTA) button that says "Register as an Author." The CTA should be visible and prominently placed on the page.
