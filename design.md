@@ -23,7 +23,7 @@ The system will consist of the following components:
 
 ## Frontend
 
-The frontend of The Book Loop will be a single-page application built with React. It will include the following features:
+The frontend of The Book Loop will be a single-page application built with NextJS. It will include the following features:
 
 - User registration and login
 - Subscription management
@@ -59,4 +59,4 @@ The use of Docker will be employed to create a containerized instance of the Pos
 
 ## Conclusion
 
-The Book Loop will be built using React and PostgreSQL with Docker, creating a powerful and scalable web application that will enable writers to earn continuously from their books. With the frontend, backend, and database all working together, The Book Loop will provide an easy-to-use platform for writers to provide updates and new versions to their readers.
+The Book Loop will be built using NextJS and PostgreSQL with Docker, creating a powerful and scalable web application that will enable writers to earn continuously from their books. With the frontend, backend, and database all working together, The Book Loop will provide an easy-to-use platform for writers to provide updates and new versions to their readers.
