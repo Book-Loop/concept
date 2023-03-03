@@ -1,10 +1,10 @@
-# Getting Started with The Book Loop - A Guide to Using React and PostgreSQL with Docker
+# Getting Started with Book Loop - A Guide to Using React and PostgreSQL with Docker
 
-The Book Loop is a subscription-based service that provides an opportunity for writers to earn continuously from their books by providing multiple versions, mentorship, videos, courses, and other resources around their topic. The service will allow writers to offer continuous updates to their readers in exchange for a recurring subscription fee.
+Book Loop is a subscription-based service that provides an opportunity for writers to earn continuously from their books by providing multiple versions, mentorship, videos, courses, and other resources around their topic. The service will allow writers to offer continuous updates to their readers in exchange for a recurring subscription fee.
 
 ## Overview
 
-This guide will walk you through setting up a development environment for The Book Loop using Docker, React, and PostgreSQL. The following steps assume that you have Docker installed on your machine.
+This guide will walk you through setting up a development environment for Book Loop using Docker, React, and PostgreSQL. The following steps assume that you have Docker installed on your machine.
 
 ## Step 1. Setting Up the Backend
 
@@ -254,4 +254,4 @@ This command will start the React development server.
 
 ## Conclusion
 
-In this guide, you learned how to set up a development environment for The Book Loop using Docker, React, and PostgreSQL. By following these steps, you should have a fully functional backend API and a frontend React app that can communicate with the API. You can now continue to build out the functionality of your application by adding new routes, database tables, and frontend components. Good luck with your project!
+In this guide, you learned how to set up a development environment for Book Loop using Docker, React, and PostgreSQL. By following these steps, you should have a fully functional backend API and a frontend React app that can communicate with the API. You can now continue to build out the functionality of your application by adding new routes, database tables, and frontend components. Good luck with your project!
