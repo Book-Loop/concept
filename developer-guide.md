@@ -58,7 +58,7 @@ services:
     environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
-        POSTGRES_DB: the_book_loop
+        POSTGRES_DB: book_loop
     ports:
         - "5432:5432"
 
@@ -69,7 +69,7 @@ services:
     environment:
         DB_USER: postgres
         DB_PASSWORD: postgres
-        DB_NAME: the_book_loop
+        DB_NAME: book_loop
     depends_on:
         - db
 
@@ -82,7 +82,7 @@ DB_HOST=db
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=postgres
-DB_NAME=the_book_loop
+DB_NAME=book_loop
 ```
 
 This file defines environment variables for the API, which will be used to connect to the PostgreSQL database.
