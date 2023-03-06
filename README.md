@@ -1,6 +1,6 @@
 # The Book Loop - A Subscription Model for Writers to Continuously Update their Books
 
-![Book-Loop](https://user-images.githubusercontent.com/64713734/222489267-1fe77f77-5815-4e68-b69b-65b87d5ff5d6.png)
+![Book Loop](https://user-images.githubusercontent.com/19922556/223109386-c4b15839-f70e-4975-9495-c60bc269695a.png)
 
 [Design](design.md) | [Developer Guide](developer-guide.md)
 
